@@ -1,0 +1,32 @@
+.counterWrapper {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 0 4rem;
+}
+
+.counter {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem 0;
+}
+
+.count { 
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0468c0;
+}
+
+@media only screen and (max-width: 574px) {
+    .counterWrapper {
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
+
+    .counter {
+        gap: 0;
+    }
+}

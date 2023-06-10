@@ -1,0 +1,117 @@
+main {
+    height: 100vh;
+    padding: 2rem 2.5rem 0 2.5rem;
+    background: #f9f9fb;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.slick-slider {
+    height: 20rem;
+    margin: 1.795rem 0;
+}
+
+.slick-slide {
+    padding-left: 3.125rem;
+}
+
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 1.8rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 0.35rem;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.slick-slider .slick-prev:hover,
+.slick-slider .slick-next:hover {
+    opacity: 0.75;
+}
+
+.slick-slider > .slick-prev:before,
+.slick-slider > .slick-next:before {
+    font-family: 'slick';
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: white;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-slider > .slick-prev:before {
+    content: '🡸';
+}
+
+.slick-slider > .slick-next:before {
+    content: '🡺';
+}
+
+.slick-slider .slick-dots { 
+    bottom: -2.813rem;
+}
+
+.slick-slider .slick-dots li.slick-active button:before {
+    color: #0468c0;
+    font-size: 1rem;
+    opacity: 1;
+}
+
+.slick-slider .slick-dots li button:before {
+    color: #0468c0;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.slick-list {
+    height: 20.625rem;
+}
+
+@media only screen and (max-width: 574px) {
+    main {
+        height: 100%;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .slick-slider {
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .slick-slide {
+        padding: 0 1rem;
+    }
+
+    .listingWrapper {
+        width: 100%;
+    }
+
+    .slick-slider .slick-dots li.slick-active button:before {
+        font-size: 0.6rem;
+    }
+
+    .slick-slider .slick-dots li button:before {
+        font-size: 0.6rem;
+    }
+
+    .slick-slider .slick-dots { 
+        bottom: -3.813rem;
+    }
+}

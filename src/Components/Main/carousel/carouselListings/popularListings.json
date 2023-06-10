@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "imgPath": "images/mainCarouselImages/home1.jpg",
+        "city": "Alberto, California",
+        "price": "$434,800"
+    },
+    {
+        "id": 2,
+        "imgPath": "images/mainCarouselImages/home2.jpg",
+        "city": "San Diego, California",
+        "price": "$449,400"
+    },
+    {
+        "id": 3,
+        "imgPath": "images/mainCarouselImages/home3.jpg",
+        "city": "Long Beach, California",
+        "price": "$523,600"
+    },
+    {
+        "id": 4,
+        "imgPath": "images/mainCarouselImages/home4.jpg",
+        "city": "Oakland, California",
+        "price": "$693,900"
+    },
+    {
+        "id": 5,
+        "imgPath": "images/mainCarouselImages/home5.jpg",
+        "city": "San Francisco, California",
+        "price": "$393,900"
+    },
+    {
+        "id": 6,
+        "imgPath": "images/mainCarouselImages/home6.jpg",
+        "city": "Anaheim, California",
+        "price": "$428,700"
+    },
+    {
+        "id": 7,
+        "imgPath": "images/mainCarouselImages/home7.jpg",
+        "city": "Fremont, California",
+        "price": "$514,300"
+    },
+    {
+        "id": 8,
+        "imgPath": "images/mainCarouselImages/home8.jpg",
+        "city": "San Jose, California",
+        "price": "$578,900"
+    },
+    {
+        "id": 9,
+        "imgPath": "images/mainCarouselImages/home9.jpg",
+        "city": "Sacramento, California",
+        "price": "$651,500"
+    },
+    {
+        "id": 10,
+        "imgPath": "images/mainCarouselImages/home10.jpg",
+        "city": "Fresno, California",
+        "price": "$612,200"
+    },
+    {
+        "id": 11,
+        "imgPath": "images/mainCarouselImages/home11.jpeg",
+        "city": "Palmdale, California",
+        "price": "$393,700"
+    },
+    {
+        "id": 12,
+        "imgPath": "images/mainCarouselImages/home12.jpeg",
+        "city": "Oceanside, California",
+        "price": "$747,400"
+    },
+    {
+        "id": 13,
+        "imgPath": "images/mainCarouselImages/home13.jpeg",
+        "city": "Riverside, California",
+        "price": "$694,200"
+    },
+    {
+        "id": 14,
+        "imgPath": "images/mainCarouselImages/home14.jpeg",
+        "city": "Stockton, California",
+        "price": "$561,800"
+    },
+    {
+        "id": 15,
+        "imgPath": "images/mainCarouselImages/home15.jpeg",
+        "city": "Bakersfield, California",
+        "price": "$587,900"
+    }
+]

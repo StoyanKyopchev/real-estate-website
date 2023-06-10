@@ -1,0 +1,29 @@
+.serviceCardsOuterWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.serviceCardsInnerWrapper {
+    width: 75rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 574px) {
+    .serviceCardsOuterWrapper {
+        flex-direction: column;
+        height: 47.5%;
+        margin-top: 4rem;
+    }
+
+    .serviceCardsInnerWrapper {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,160 @@
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.form {
+    max-width: 37.5rem;
+    width: 25rem;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    position: relative;
+    left: 40%;
+    top: 30%;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 1.125rem 0 #000000bf;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #0468c0;
+}
+
+.form h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.fieldWrapper {
+    width: 100%;
+    position: relative;
+}
+
+.form .fieldWrapper:nth-child(3) {
+    margin-bottom: 1.4rem;
+}
+
+.fieldWrapper label {
+    display: block;
+    color: #0468c0;
+    font-size: 1.1rem;
+}
+
+.fieldWrapper input {
+    width: 100%;
+    height: 3.4rem;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.2;
+    padding-left: 3.125rem;
+    background-image: url(../../../images/heroSectionImages//modalImages/usernameIcon.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position-y: center;
+}
+
+.fieldWrapper:nth-of-type(3) input {
+    background-image: url(../../../images/heroSectionImages//modalImages/passwordIcon.png);
+}
+
+.inputStyle {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.inputStyle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -0.125rem;
+    left: 0;
+    height: 0.17rem;
+    background-color: #182b3a;
+    background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);     
+}
+
+.forgotPassword {
+    display: block;
+    text-align: right;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.forgotPassword:hover {
+    color: #0468c0;
+}
+
+.loginBtnWrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.loginBtn {
+    height: 2.75rem;
+    width: 10rem;
+    text-transform: uppercase;
+    border: 2px solid #0468c0;
+    border-radius: 0.25rem;
+    background: #0468c0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease-in-out
+}
+
+.loginBtn:hover,
+.loginBtn:focus {
+    color: #0468c0;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.form p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.socialMediaWrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socialMediaWrapper img {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 574px) {
+    .form {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

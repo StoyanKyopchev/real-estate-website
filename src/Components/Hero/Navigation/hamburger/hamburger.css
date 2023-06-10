@@ -1,0 +1,70 @@
+.hamburgerButton {
+    width: 1.35rem;
+    height: 1.35rem;
+    position: absolute;
+    left: 0.8rem;
+    top: 1.5rem;
+}
+
+.hamburger {
+    width: 100%;
+    background: #000;
+    height: 0.125rem;
+    margin: 0.125rem 0;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+.hamburger1 {
+    transform: rotate(-45deg);
+    top: 25.45%;
+}
+
+.hamburger2 {
+    transform: rotate(45deg);
+    top: 2.5%;
+}
+
+.hamburger3 {
+    transform: rotate(45deg);
+    top: -13%;
+}
+
+.hamburgerMenu {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    margin-top: 0.2rem;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.2s linear;
+}
+
+.hamburgerMenuActive {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s linear;
+}
+
+.hamburgerMenu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburgerMenu ul li {
+    border-bottom: 1px solid #333;
+    padding: 0.75rem 0 0.5rem 0.75rem;
+}
+
+.hamburgerMenu ul li:first-child {
+    border-top: 1px solid #333;
+}
+
+.hamburgerMenu a img {
+    width: 1.6rem;
+    height: 1.6rem;    
+    vertical-align: top;
+    margin-right: 0.5rem;
+}

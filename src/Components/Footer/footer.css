@@ -1,0 +1,107 @@
+.footer {
+    background: #24262b;
+    padding: 1.75rem 2.5rem;
+}
+
+.outerWrapper {
+    max-width: 73.125rem;
+    margin: auto;
+}
+
+.innerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.column {
+    width: 25%;
+    padding: 0 0.938rem;
+}
+
+.column h3 {
+    display: inline-block;
+    position: relative;
+    color: #bbb;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.column h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    background: #0468c0;
+    height: 0.125rem;
+    width: 100%;
+}
+
+.column img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.4rem;
+    vertical-align: top;
+}
+
+.column ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.column ul li a {
+    position: relative;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.column ul li a:hover {
+    color: #bbb;
+}
+
+.column ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0.125rem;
+    top: 110%;
+    left: 0;
+    background: transparent;
+    transition: all 0.25s linear;
+}
+
+.column ul li a:hover::after,
+.column ul li a:focus::after {
+    width: 100%;
+    background: #fff;
+}
+
+.socials ul {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.socials img {
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.socials ul li a::after {
+    display: none;
+}
+
+@media only screen and (max-width: 767px){
+    .column{
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+@media only screen and (max-width: 574px){
+    .column{
+      width: 100%;
+    }
+  }

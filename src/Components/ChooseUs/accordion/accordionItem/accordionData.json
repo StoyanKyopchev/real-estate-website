@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "handleText": "Because we've been there and done it",
+        "contentText": "When you choose us, you'll feel the benefit of 15 years' experience in the real estate industry. We provide you with professionalism and propriety from start to finish."
+    },
+    {
+        "id": 2,
+        "handleText": "We're contactable and responsive.",
+        "contentText": "We believe a responsive organization is always the best for every client. Have you ever been frustrated by an organization that is difficult to contact? Usually, we're available to take your call but if we aren't and you leave a message then we'll call you back within 24 business hours."
+    },
+    {
+        "id": 3,
+        "handleText": "We provide peace of mind",
+        "contentText": "Because we provide a fixed price and guarantee our work, you can rest assured that you won't have any unpleasant surprises."
+    },
+    {
+        "id": 4,
+        "handleText": "We meet deadlines",
+        "contentText": "We understand how important it is for you to find your new home or rental property as soon as possible. Nobody likes to wait months on end to find their new home or sell their current one. We work diligently to ensure that all deadlines are met."
+    },
+    {
+        "id": 5,
+        "handleText": "We track results",
+        "contentText": "We're constantly tracking the performance of our services. We'll use internal testing to track all critical metrics. It's also the best way to provide concrete evidence of our impact."
+    }
+]
