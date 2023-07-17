@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Hero from "./Components/Hero/Hero.jsx";
 import Main from "./Components/Main/Main.jsx";
 import ChooseUs from "./Components/ChooseUs/ChooseUs.jsx";
@@ -17,4 +18,10 @@ function App() {
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="...loading">
+      <App />
+    </Suspense>
+  )
+};

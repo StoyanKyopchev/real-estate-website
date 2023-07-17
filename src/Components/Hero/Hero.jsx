@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Navigation from "./Navigation/Navigation.jsx";
 import Modal from "./Modal/Modal.jsx";
 import "./hero.css"
 
 export default function Header() {
+    const { t, i18n } = useTranslation();
     const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
@@ -20,7 +21,7 @@ export default function Header() {
             document.removeEventListener("keydown", handleEscape);
         };
     }, []);
-
+    
     return (
         <>
             <Modal 
@@ -30,7 +31,7 @@ export default function Header() {
             <div className="heroWrapper">
                 <Navigation setOpenModal={setOpenModal} />
                 <div className="innerHeroWrapper">
-                    <h1>Discover Your New Home</h1>
+                    <h1>{t("hero.header")}</h1>
                     <div className="searchBarWrapper">
                         <input 
                             type="text" 
