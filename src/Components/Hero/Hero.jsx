@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useState, useEffect, useContext } from "react";
+import { TranslatorContext } from "../../App";
 import Navigation from "./Navigation/Navigation.jsx";
 import Modal from "./Modal/Modal.jsx";
 import "./hero.css"
 
 export default function Header() {
-    const { t, i18n } = useTranslation();
     const [openModal, setOpenModal] = useState(false);
+    const { t, i18n } = useContext(TranslatorContext);
 
     useEffect(() => {
         const handleEscape = (e) => {

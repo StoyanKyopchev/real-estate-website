@@ -1,4 +1,5 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import Hero from "./Components/Hero/Hero.jsx";
 import Main from "./Components/Main/Main.jsx";
 import ChooseUs from "./Components/ChooseUs/ChooseUs.jsx";
@@ -7,13 +8,19 @@ import "./CSS/global.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+export const TranslatorContext = React.createContext();
+
 function App() {
+  const { t, i18n } = useTranslation();
+
   return (
     <>
-      <Hero />
-      <Main />
-      <ChooseUs />
-      <Footer />
+      <TranslatorContext.Provider value={{ t, i18n }}>
+        <Hero />
+        <Main />
+        <ChooseUs />
+        <Footer />
+      </TranslatorContext.Provider>
     </>
   );
 }
