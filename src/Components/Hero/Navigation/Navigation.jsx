@@ -2,7 +2,7 @@ import { useState } from "react";
 import Hamburger from "./hamburger/Hamburger.jsx";
 import "./navigation.css";
 
-export default function Navigation({ setOpenModal }) {
+export default function Navigation({ setOpenModal, languageMenuOpen, toggleLanguageDropdown }) {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
     function toggleHamburger() {
@@ -11,7 +11,10 @@ export default function Navigation({ setOpenModal }) {
 
     return (
         <>
-            <nav className="navWrapper">
+            <nav 
+                className="navWrapper" 
+                onClick={(e) => {e.stopPropagation();}}
+            >
                 <div 
                     className="hamburgerWrapper"
                     onClick={toggleHamburger}
@@ -24,6 +27,19 @@ export default function Navigation({ setOpenModal }) {
                     HomesA-Z
                 </a>
                 <ul className="navInnerWrapper">
+                    <li>
+                        <button 
+                            className="languageMenuButton"
+                            onClick={toggleLanguageDropdown}
+                        >
+                            <img src={require("../../../images/navImages/language.png")} />
+                            Language
+                        </button>
+                        <ul className={`languageDropdown ${languageMenuOpen ? "languageDropdownActive" : ""}`}>
+                            <li>English</li>
+                            <li>Français</li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#getStarted">
                             <img src={require("../../../images/navImages/getStarted.png")} />

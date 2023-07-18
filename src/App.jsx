@@ -9,6 +9,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const TranslatorContext = React.createContext();
+export const locales = {
+  en: { title: "English" },
+  fr: { title: "Français" }
+};
 
 function App() {
   const { t, i18n } = useTranslation();

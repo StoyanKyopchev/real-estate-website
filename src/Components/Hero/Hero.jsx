@@ -6,6 +6,7 @@ import "./hero.css"
 
 export default function Header() {
     const [openModal, setOpenModal] = useState(false);
+    const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
     const { t, i18n } = useContext(TranslatorContext);
 
     useEffect(() => {
@@ -21,15 +22,26 @@ export default function Header() {
             document.removeEventListener("keydown", handleEscape);
         };
     }, []);
-    
+
+    function toggleLanguageDropdown() {
+        setLanguageMenuOpen(!languageMenuOpen);
+    }
+
     return (
         <>
             <Modal 
                 isOpen={openModal} 
                 onClose={() => setOpenModal(false)} 
             />
-            <div className="heroWrapper">
-                <Navigation setOpenModal={setOpenModal} />
+            <div 
+                className="heroWrapper" 
+                onClick={() => setLanguageMenuOpen(false)}
+            >
+                <Navigation 
+                    setOpenModal={setOpenModal} 
+                    toggleLanguageDropdown={toggleLanguageDropdown}
+                    languageMenuOpen={languageMenuOpen}
+                />
                 <div className="innerHeroWrapper">
                     <h1>{t("hero.header")}</h1>
                     <div className="searchBarWrapper">
