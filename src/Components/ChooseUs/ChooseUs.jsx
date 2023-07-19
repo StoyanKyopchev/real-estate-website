@@ -1,20 +1,20 @@
+import { useContext } from "react";
+import { TranslatorContext } from "../../App";
 import Counter from "./counter/Counter.jsx";
 import Accordion from "./accordion/Accordion.jsx";
 import "./chooseUs.css";
 
 export default function ChooseUs() {
+    const { t } = useContext(TranslatorContext);
+
     return (
         <>
             <section>
                 <div className="sectionLeftSide"></div>
                 <div className="sectionRightSide">
-                    <h2>Why choose us?</h2>
+                    <h2>{t("ChooseUs.chooseUsHeading")}</h2>
                     <Counter />
-                    <p>
-                        Our track record speaks for itself. We have worked with thousands of people in the United States, and all 
-                        across Europe. Feel free to ask for verified testimonials if you'd like to see what our past clients think 
-                        of our work!
-                    </p>
+                    <p>{t("ChooseUs.chooseUsParagraph")}</p>
                     <Accordion />
                 </div>
             </section>

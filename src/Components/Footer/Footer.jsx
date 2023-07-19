@@ -1,44 +1,48 @@
+import { useContext } from "react";
+import { TranslatorContext } from "../../App";
 import "./footer.css"
 
 export default function Footer() {
+    const { t } = useContext(TranslatorContext);
+
     return (
         <>
             <footer className="footer" id="footerScroll">
                 <div className="outerWrapper">
                     <div className="innerWrapper">
                         <div className="column">
-                            <h3>Company</h3>
+                            <h3>{t("Footer.column1.company")}</h3>
                             <ul>
                                 <li>
-                                    <a href="#footerScroll">About Us</a>
+                                    <a href="#footerScroll">{t("Footer.column1.aboutUs")}</a>
                                 </li>
                                 <li>
-                                    <a href="#footerScroll">FAQ</a>
+                                    <a href="#footerScroll">{t("Footer.column1.faq")}</a>
                                 </li>
                                 <li>
-                                    <a href="#footerScroll">Privacy Policy</a>
+                                    <a href="#footerScroll">{t("Footer.column1.privacyPolicy")}</a>
                                 </li>
                                 <li>
-                                    <a href="#footerScroll">Terms & Conditions</a>
+                                    <a href="#footerScroll">{t("Footer.column1.termsAndConditions")}</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="column">
-                            <h3>Online Consultancy</h3>
+                            <h3>{t("Footer.column2.onlineConsultancy")}</h3>
                             <ul>
                                 <li>
-                                    <a href="#footerScroll">Purchasing a Home</a>
+                                    <a href="#footerScroll">{t("Footer.column2.purchasingHome")}</a>
                                 </li>
                                 <li>
-                                    <a href="#footerScroll">Selling a Home</a>
+                                    <a href="#footerScroll">{t("Footer.column2.sellingHome")}</a>
                                 </li>
                                 <li>
-                                    <a href="#footerScroll">Finding a rental home</a>
+                                    <a href="#footerScroll">{t("Footer.column2.findingRental")}</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="column">
-                            <h3>Contact us</h3>
+                            <h3>{t("Footer.column3.contactUs")}</h3>
                             <ul>
                                 <li>
                                     <a href="#footerScroll">
@@ -61,7 +65,7 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div className="column socials">
-                            <h3>Follow Us</h3>
+                            <h3>{t("Footer.column4.followUs")}</h3>
                             <ul>
                                 <li>
                                     <a href="#footerScroll">

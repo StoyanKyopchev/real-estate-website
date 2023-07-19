@@ -1,5 +1,69 @@
 {
-    "hero": {
-        "header": "Discover Your New Home"
+    "Hero": {
+        "h1": "Discover Your New Home",
+        "placeholder": "Enter an address, neighborhood, city, or postal code",
+        "Modal": {
+            "login": "Login",
+            "username": "Username",
+            "usernamePlaceholder": "Enter your username",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "forgotPassword": "Forgot password?",
+            "altSignInOptions": "Or sign in using:"
+        },
+        "Navigation": {
+            "languageBtn": "Language",
+            "getStartedBtn": "Get Started",
+            "aboutBtn": "About",
+            "contactUsBtn": "Contact Us",
+            "signInBtn": "Sign in"
+        }
+    },
+    "Main": {
+        "popularListings": "Popular Listings",
+        "Listing": {
+            "listingDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste voluptate quod deserunt reprehenderit cum ut odit nobis."
+        },
+        "Services": {
+            "buyHeading": "Buy a home",
+            "buyText": "HomesA-Z can match you with a house you will want to call home in any region and neighborhood.",
+            "buyBtnText": "Browse homes",
+            "sellHeading": "Sell a home",
+            "sellText": "No matter what path you take to sell your home, we can help you navigate a successful sale.",
+            "sellBtnText": "See your options",
+            "rentHeading": "Rent a home",
+            "rentText": "With our big selection of rental properties, we can help you find rental housing that you will love.",
+            "rentBtnText": "Find rentals"
+        }
+    },
+    "ChooseUs": {
+        "chooseUsHeading": "Why choose us?",
+        "chooseUsParagraph": "Our track record speaks for itself. We have worked with thousands of people in the United States, and all across Europe. Feel free to ask for verified testimonials if you'd like to see what our past clients think of our work!",
+        "Counter": {
+            "homesForSale": "Homes for sale",
+            "recentlySold": "Recently sold",
+            "happyCustomers": "Happy customers"
+        }
+    },
+    "Footer": {
+        "column1": {
+            "company": "Company",
+            "aboutUs": "About us",
+            "faq": "FAQ",
+            "privacyPolicy": "Privacy Policy",
+            "termsAndConditions": "Terms & Conditions"
+        },
+        "column2": {
+            "onlineConsultancy": "Online Consultancy",
+            "purchasingHome": "Purchasing a Home",
+            "sellingHome": "Selling a Home",
+            "findingRental": "Finding a rental home"
+        },
+        "column3": {
+            "contactUs": "Contact us"
+        },
+        "column4": {
+            "followUs": "Follow Us"
+        }
     }
 }

@@ -40,7 +40,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             onClick={toggleLanguageDropdown}
                         >
                             <img src={require("../../../images/navImages/language.png")} />
-                            Language
+                            {t("Hero.Navigation.languageBtn")}
                         </button>
                         <ul className={`languageDropdown ${languageMenuOpen ? "languageDropdownActive" : ""}`}>
                             {Object.keys(locales).map((locale) => (
@@ -58,19 +58,19 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                     <li>
                         <a href="#getStarted">
                             <img src={require("../../../images/navImages/getStarted.png")} />
-                            Get Started
+                            {t("Hero.Navigation.getStartedBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
                             <img src={require("../../../images/navImages/about.png")} />
-                            About
+                            {t("Hero.Navigation.aboutBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
                             <img src={require("../../../images/navImages/contactUs.png")} />
-                            Contact Us
+                            {t("Hero.Navigation.contactUsBtn")}
                         </a>
                     </li>
                     <li>
@@ -79,7 +79,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             onClick={() => setOpenModal(true)}
                         >
                             <img src={require("../../../images/navImages/signIn.png")} />
-                            Sign in
+                            {t("Hero.Navigation.signInBtn")}
                         </a>
                     </li>
                 </ul>

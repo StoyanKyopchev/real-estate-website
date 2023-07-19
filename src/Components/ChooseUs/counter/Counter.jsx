@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { TranslatorContext } from "../../../App";
 import CountUp from "react-countup";
 import "./counter.css";
 
 export default function Counter() {
+    const { t } = useContext(TranslatorContext);
+
     return (
         <>
             <div className="counterWrapper">
@@ -15,7 +19,7 @@ export default function Counter() {
                         />
                         <span> +</span>
                     </span>
-                    <span>Homes for sale</span>
+                    <span>{t("ChooseUs.Counter.homesForSale")}</span>
                 </div>
                 <div className="counter">
                     <span className="count">
@@ -26,7 +30,7 @@ export default function Counter() {
                         />
                         <span> +</span>
                     </span>
-                    <span>Recently sold</span>
+                    <span>{t("ChooseUs.Counter.recentlySold")}</span>
                 </div>
                 <div className="counter">
                     <span className="count">
@@ -38,7 +42,7 @@ export default function Counter() {
                         />
                         <span> +</span>
                     </span>
-                    <span>Happy customers</span>
+                    <span>{t("ChooseUs.Counter.happyCustomers")}</span>
                 </div>
             </div>
         </>

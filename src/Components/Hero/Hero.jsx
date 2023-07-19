@@ -43,11 +43,11 @@ export default function Header() {
                     languageMenuOpen={languageMenuOpen}
                 />
                 <div className="innerHeroWrapper">
-                    <h1>{t("hero.header")}</h1>
+                    <h1>{t("Hero.h1")}</h1>
                     <div className="searchBarWrapper">
                         <input 
                             type="text" 
-                            placeholder="Enter an address, neighborhood, city, or postal code"
+                            placeholder={t("Hero.placeholder")}
                             className="searchBar" 
                         />
                         <span className="searchButtonWrapper">

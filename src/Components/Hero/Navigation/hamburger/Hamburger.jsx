@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { TranslatorContext } from "../../../../App";
 import "./hamburger.css";
 
 export default function Hamburger({ isToggled }) {
+    const { t } = useContext(TranslatorContext);
+
     return (
         <>
             <div className="hamburgerButton">
@@ -14,19 +18,19 @@ export default function Hamburger({ isToggled }) {
                     <li>
                         <a href="#getStarted">
                             <img src={require("../../../../images/navImages/getStarted.png")} />
-                            Get Started
+                            {t("Hero.Navigation.getStartedBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
                             <img src={require("../../../../images/navImages/about.png")} />
-                            About
+                            {t("Hero.Navigation.aboutBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
                             <img src={require("../../../../images/navImages/contactUs.png")} />
-                            Contact Us
+                            {t("Hero.Navigation.contactUsBtn")}
                         </a>
                     </li>
                 </ul>

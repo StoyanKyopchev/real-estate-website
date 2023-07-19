@@ -1,5 +1,69 @@
 {
-    "hero": {
-        "header": "Découvrez votre nouvelle maison"
+    "Hero": {
+        "h1": "Découvrez votre nouvelle maison",
+        "placeholder": "Saisissez une adresse, un quartier, une ville ou un code postal",
+        "Modal": {
+            "login": "Connexion",
+            "username": "Nom d'utilisateur",
+            "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+            "password": "Mot de passe",
+            "passwordPlaceholder": "Tapez votre mot de passe",
+            "forgotPassword": "Mot de passe oublié?",
+            "altSignInOptions": "Ou connectez-vous en utilisant:"
+        },
+        "Navigation": {
+            "languageBtn": "Langue",
+            "getStartedBtn": "Commencer",
+            "aboutBtn": "À propos",
+            "contactUsBtn": "Contactez-nous",
+            "signInBtn": "S'identifier"
+        }
+    },
+    "Main": {
+        "popularListings": "Listes populaires",
+        "Listing": {
+            "listingDescription": "Il est très important que le client fasse attention au processus d'adipiscing. Il nous reproche avec plaisir de nous quitter, car il nous hait."
+        },
+        "Services": {
+            "buyHeading": "Acheter une maison",
+            "buyText": "HomesA-Z peut vous jumeler avec une maison que vous voudrez appeler chez vous dans n'importe quelle région et quartier.",
+            "buyBtnText": "Parcourir les maisons",
+            "sellHeading": "Vendre une maison",
+            "sellText": "Peu importe le chemin que vous empruntez pour vendre votre maison, nous pouvons vous aider à réussir la vente.",
+            "sellBtnText": "Voir vos options",
+            "rentHeading": "Louer une maison",
+            "rentText": "Grâce à notre large sélection de propriétés locatives, nous pouvons vous aider à trouver un logement locatif que vous adorerez.",
+            "rentBtnText": "Trouver des locations"
+        }
+    },
+    "ChooseUs": {
+        "chooseUsHeading": "Pourquoi nous choisir?",
+        "chooseUsParagraph": "Notre palmarès parle de lui-même. Nous avons travaillé avec des milliers de personnes aux États-Unis et dans toute l'Europe. N'hésitez pas à demander des témoignages vérifiés si vous souhaitez voir ce que nos anciens clients pensent de notre travail!",
+        "Counter": {
+            "homesForSale": "Maisons à vendre",
+            "recentlySold": "Vendu récemment",
+            "happyCustomers": "Des clients satisfaits"
+        }
+    },
+    "Footer": {
+        "column1": {
+            "company": "Entreprise",
+            "aboutUs": "À propos de nous",
+            "faq": "QFP",
+            "privacyPolicy": "Politique de Confidentialité",
+            "termsAndConditions": "Termes et Conditions"
+        },
+        "column2": {
+            "onlineConsultancy": "Conseil en Ligne",
+            "purchasingHome": "Acheter une maison",
+            "sellingHome": "Vendre une Maison",
+            "findingRental": "Trouver une maison de location"
+        },
+        "column3": {
+            "contactUs": "Contactez-nous"
+        },
+        "column4": {
+            "followUs": "Suivez-Nous"
+        }
     }
 }
