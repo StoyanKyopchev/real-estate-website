@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TranslatorContext } from "../../../App";
 import Hamburger from "./hamburger/Hamburger.jsx";
 import "./navigation.css";
 
+const locales = {
+    en: { title: "English" },
+    fr: { title: "Français" }
+  };
+
 export default function Navigation({ setOpenModal, languageMenuOpen, toggleLanguageDropdown }) {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
+    const { t, i18n } = useContext(TranslatorContext);
 
     function toggleHamburger() {
         setHamburgerOpen(!hamburgerOpen);
@@ -36,8 +43,16 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             Language
                         </button>
                         <ul className={`languageDropdown ${languageMenuOpen ? "languageDropdownActive" : ""}`}>
-                            <li>English</li>
-                            <li>Français</li>
+                            {Object.keys(locales).map((locale) => (
+                                <li key={locale}>
+                                    <button onClick={() => {
+                                        i18n.changeLanguage(locale);
+                                        toggleLanguageDropdown();}}
+                                    >
+                                        {locales[locale].title}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </li>
                     <li>

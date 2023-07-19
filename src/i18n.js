@@ -11,5 +11,5 @@ i18n
         debug: true,
         fallbackLang: "en"
     });
-i18n.changeLanguage("en");
+
 export default i18n;

@@ -92,14 +92,19 @@
 }
 
 .languageDropdown li {
-    padding: 0.4rem;
     border-bottom: 1px solid #333;
-    text-align: center;
-    color: #000;
-    cursor: pointer;
 }
 
-.languageDropdown li:hover {
+.languageDropdown li button {
+    border: none;
+    background: #fff;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+.languageDropdown li button:hover {
     background: #0468c0;
     color: #fff;
 }

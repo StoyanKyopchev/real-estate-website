@@ -7,7 +7,7 @@ import "./hero.css"
 export default function Header() {
     const [openModal, setOpenModal] = useState(false);
     const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-    const { t, i18n } = useContext(TranslatorContext);
+    const { t } = useContext(TranslatorContext);
 
     useEffect(() => {
         const handleEscape = (e) => {
