@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import { TranslatorContext } from "../../../../App";
 import "./accordionItem.css"
 
 export default function AccordionItem({ item, toggle, clicked, index }) {
+
+    const { i18n } = useContext(TranslatorContext);
+    let currentLanguage = i18n.language;
+
     return (
         <>
             <div className="accordionItem">
@@ -8,7 +14,7 @@ export default function AccordionItem({ item, toggle, clicked, index }) {
                     className="accordionHandle"
                     onClick={() => toggle(index)}
                 >
-                    <p>{item.handleText}</p>
+                    <p>{item[currentLanguage].handleText}</p>
                     <img 
                         src={require("../../../../images/chooseUsSectionImages/dropDownIcon.png")} 
                         className={clicked === index ? "rotateIcon" : ""}
@@ -17,7 +23,7 @@ export default function AccordionItem({ item, toggle, clicked, index }) {
                 <div 
                     className={clicked === index ? "accordionContent visible" : "accordionContent"}
                 >
-                    <p>{item.contentText}</p>
+                    <p>{item[currentLanguage].contentText}</p>
                 </div>
             </div>
         </>
