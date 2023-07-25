@@ -48,7 +48,7 @@
     transition: opacity 0.2s linear;
 }
 
-.hamburgerMenu ul {
+.hamburgerMenu > ul {
     display: flex;
     flex-direction: column;
 }

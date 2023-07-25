@@ -18,11 +18,13 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                 className="navWrapper" 
                 onClick={(e) => {e.stopPropagation();}}
             >
-                <div 
-                    className="hamburgerWrapper"
-                    onClick={toggleHamburger}
-                >
-                        <Hamburger isToggled={hamburgerOpen}/>
+                <div className="hamburgerWrapper">
+                        <Hamburger 
+                            isToggled={hamburgerOpen}
+                            languageMenuOpen={languageMenuOpen}
+                            toggleLanguageDropdown={toggleLanguageDropdown}
+                            toggleHamburger={toggleHamburger}
+                        />
                 </div>
 
                 <a href="/" id="logoIcon">
