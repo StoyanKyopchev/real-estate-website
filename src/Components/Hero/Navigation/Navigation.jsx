@@ -1,16 +1,12 @@
 import { useState, useContext } from "react";
 import { TranslatorContext } from "../../../App";
 import Hamburger from "./hamburger/Hamburger.jsx";
+import LanguageDropdown from "./languageDropdown/LanguageDropdown.jsx";
 import "./navigation.css";
-
-const locales = {
-    en: { title: "English" },
-    fr: { title: "Français" }
-  };
 
 export default function Navigation({ setOpenModal, languageMenuOpen, toggleLanguageDropdown }) {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
-    const { t, i18n } = useContext(TranslatorContext);
+    const { t } = useContext(TranslatorContext);
 
     function toggleHamburger() {
         setHamburgerOpen(!hamburgerOpen);
@@ -42,18 +38,10 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             <img src={require("../../../images/navImages/language.png")} />
                             {t("Hero.Navigation.languageBtn")}
                         </button>
-                        <ul className={`languageDropdown ${languageMenuOpen ? "languageDropdownActive" : ""}`}>
-                            {Object.keys(locales).map((locale) => (
-                                <li key={locale}>
-                                    <button onClick={() => {
-                                        i18n.changeLanguage(locale);
-                                        toggleLanguageDropdown();}}
-                                    >
-                                        {locales[locale].title}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                        <LanguageDropdown 
+                            languageMenuOpen={languageMenuOpen} 
+                            toggleLanguageDropdown={toggleLanguageDropdown}
+                        />
                     </li>
                     <li>
                         <a href="#getStarted">
