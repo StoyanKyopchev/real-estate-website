@@ -9,9 +9,11 @@ export default function Listing({ home }) {
         <>
             <div className="listingWrapper">
                 <img src={ home.imgPath } />
-                <h3>{ home.city }</h3>
-                <p className="listingPrice">{ home.price }</p>
-                <p>{t("Main.Listing.listingDescription")}</p>
+                <div className="listingBottomHalf">
+                    <h3>{ home.city }</h3>
+                    <p className="listingPrice">{ home.price }</p>
+                    <p>{t("Main.Listing.listingDescription")}</p>
+                </div>
             </div>
         </>
     )

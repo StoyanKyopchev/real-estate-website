@@ -40,9 +40,11 @@ export default function Service({ imgPath, heading, text, index, btntext }) {
             >
                 <div className="serviceCard">
                     <img src={imgPath} />
-                    <h3>{heading}</h3>
-                    <p>{text}</p>
-                    <button>{btntext}</button>
+                    <div className="serviceCardBottom">
+                        <h3>{heading}</h3>
+                        <p>{text}</p>
+                        <button>{btntext}</button>
+                    </div>
                 </div>
             </div>
         </>

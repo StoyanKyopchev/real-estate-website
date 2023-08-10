@@ -2,6 +2,7 @@
     width: 16.5rem;
     height: 20.5rem;  
     border-radius: 0.5rem;
+    padding-bottom: 0.5rem;
     background: #fff;
     box-shadow: #0000004d 0px 2px 4px 0px;
     text-align: center;
@@ -20,8 +21,12 @@
     margin-bottom: 0.5rem;
 }
 
+.listingBottomHalf {
+    padding: 0 0.5rem;
+}
+
 .listingPrice {
     font-size: 1.20rem;
     font-weight: 700;
-    margin: 0.5rem 0 0.75rem 0;
+    margin: 0.5rem 0;
 }
