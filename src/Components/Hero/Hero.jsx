@@ -43,18 +43,22 @@ export default function Header() {
                     languageMenuOpen={languageMenuOpen}
                 />
                 <div className="innerHeroWrapper">
-                    <h1>{t("Hero.h1")}</h1>
-                    <div className="searchBarWrapper">
-                        <input 
-                            type="text" 
-                            placeholder={t("Hero.placeholder")}
-                            className="searchBar" 
-                        />
-                        <span className="searchButtonWrapper">
-                            <button>
-                                <img src={require("../../images/heroSectionImages/searchButton.png")} />
-                            </button>
-                        </span>
+                    <div className="headingWrapper">
+                        <h1>{t("Hero.h1")}</h1>
+                    </div>
+                    <div className="searchBarOuterWrapper">
+                        <div className="searchBarWrapper">
+                            <input 
+                                type="text" 
+                                placeholder={t("Hero.placeholder")}
+                                className="searchBar" 
+                            />
+                            <span className="searchButtonWrapper">
+                                <button>
+                                    <img src={require("../../images/heroSectionImages/searchButton.png")} />
+                                </button>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
