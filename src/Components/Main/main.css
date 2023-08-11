@@ -114,4 +114,14 @@ h2 {
     .slick-slider .slick-dots { 
         bottom: -3.813rem;
     }
+
+    .slick-slider .slick-prev,
+    .slick-slider .slick-next {
+        z-index: 1;
+    }
+    
+    .slick-slider .slick-prev:hover,
+    .slick-slider .slick-next:hover {
+        opacity: 1;
+    }
 }
