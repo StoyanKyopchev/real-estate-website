@@ -55,3 +55,22 @@
         height: auto;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .accordionHandle {
+        height: 2.75rem;
+        font-size: 1.2rem;
+    }
+
+    .accordionHandle > img {
+        height: 2.5rem;
+    }
+    
+    .accordionContent {
+        line-height: 1.3rem;
+    }
+
+    .accordionContent p {
+        padding: 1rem;
+    }
+}

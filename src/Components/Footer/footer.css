@@ -94,14 +94,19 @@ ul {
     display: none;
 }
 
-@media only screen and (max-width: 767px){
-    .column{
-      width: 50%;
-      margin-bottom: 30px;
-    }
-  }
 @media only screen and (max-width: 574px){
     .column{
       width: 100%;
     }
   }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .column {
+        padding: 0 0.6rem;
+    }
+
+    .socials img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

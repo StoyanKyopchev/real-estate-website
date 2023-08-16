@@ -125,3 +125,17 @@ h2 {
         opacity: 1;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        height: 100%;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .slick-slide {
+        padding-left: 1.5rem;
+    }
+}

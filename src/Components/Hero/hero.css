@@ -105,3 +105,24 @@
         align-items: center;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .innerHeroWrapper {
+        height: 37%;
+    }
+
+    .headingWrapper {
+        top: 2.5%;
+    }
+
+    .searchBarOuterWrapper {
+        height: 5.5vh;
+        max-height: none;
+        max-width: 21.5vw;
+        top: 16.2%;
+    }
+
+    .searchBar {
+        padding: 0.5rem;
+    }
+}

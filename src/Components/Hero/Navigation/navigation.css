@@ -107,3 +107,32 @@
         display: none;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .navWrapper {
+        padding: 0.4rem 1rem;
+    }
+
+    #logoIcon {
+        font-size: 1.6rem;
+    }
+
+    #logoIcon img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .navInnerWrapper {
+        position: relative;
+        gap: 0 1rem;
+    }
+
+    .navInnerWrapper a {
+        font-size: 1.75vw;
+    }
+
+    .navInnerWrapper a img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

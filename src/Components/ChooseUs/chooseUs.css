@@ -69,3 +69,32 @@ section {
         top: 0;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    section {
+        height: 100%;
+        padding: 2rem 0 2rem 2.5rem;
+    }
+
+    .sectionLeftSide {
+        height: 100vh;
+    }
+
+    .sectionRightSide {
+        padding: 0 2.5rem 0 1rem;
+    }
+
+    .sectionRightSide > p {
+        width: 100%;
+        font-size: 1rem;
+        margin: 0;
+        position: relative;
+        top: 1.25rem;
+    }
+
+    .accordionWrapper {
+        width: 100%;
+        left: 0;
+        top: 2rem;
+    }
+}

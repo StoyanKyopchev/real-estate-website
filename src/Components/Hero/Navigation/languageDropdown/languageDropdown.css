@@ -85,3 +85,24 @@
         font-size: 1rem;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .languageMenuButton {
+        font-size: 1.75vw;
+        font-weight: 500;
+    }
+
+    .languageMenuButton img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .languageDropdown {
+        width: 6.875rem;
+        margin-top: 0.85rem;
+    }
+
+    .languageDropdown li button {
+        padding: 0.25rem;
+    }
+}

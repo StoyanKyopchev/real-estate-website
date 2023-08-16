@@ -158,3 +158,12 @@
         height: 100%;
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .form {
+        width: 22rem;
+        padding: 2rem;
+        top: 5%;
+        left: 35%; 
+    }
+}
