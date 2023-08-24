@@ -77,11 +77,12 @@ section {
     }
 
     .sectionLeftSide {
-        height: 100vh;
+        height: 80vh;
     }
 
     .sectionRightSide {
         padding: 0 2.5rem 0 1rem;
+        height: 80vh;
     }
 
     .sectionRightSide > p {
@@ -95,6 +96,6 @@ section {
     .accordionWrapper {
         width: 100%;
         left: 0;
-        top: 2rem;
+        top: 2.5rem;
     }
 }

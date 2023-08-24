@@ -109,6 +109,7 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .innerHeroWrapper {
         height: 37%;
+        top: 16%;
     }
 
     .headingWrapper {
@@ -116,10 +117,10 @@
     }
 
     .searchBarOuterWrapper {
-        height: 5.5vh;
+        height: 4.5vh;
         max-height: none;
         max-width: 21.5vw;
-        top: 16.2%;
+        top: 17.35%;
     }
 
     .searchBar {
