@@ -3,13 +3,17 @@
         "h1": "Discover Your New Home",
         "placeholder": "Enter an address, neighborhood, city, or postal code",
         "Modal": {
+            "signUp": "Sign Up",
             "login": "Login",
-            "username": "Username",
-            "usernamePlaceholder": "Enter your username",
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
             "password": "Password",
+            "passwordConfirmation": "Password confirmation",
             "passwordPlaceholder": "Enter your password",
+            "passwordConfirmationPlaceholder": "Confirm your password",
             "forgotPassword": "Forgot password?",
-            "altSignInOptions": "Or sign in using:"
+            "alreadyHaveAnAccount": "Already registered? Log in",
+            "signUpError": "Passwords do not match"
         },
         "Navigation": {
             "languageBtn": "Language",

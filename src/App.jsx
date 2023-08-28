@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const TranslatorContext = React.createContext();
 
-function App() {
+export default function App() {
   const { t, i18n } = useTranslation();
 
   return (
@@ -24,11 +24,3 @@ function App() {
     </>
   );
 }
-
-export default function WrappedApp() {
-  return (
-    <Suspense fallback="...loading">
-      <App />
-    </Suspense>
-  )
-};

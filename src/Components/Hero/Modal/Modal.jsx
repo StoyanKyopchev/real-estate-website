@@ -49,12 +49,6 @@ export default function Modal({ isOpen, onClose }) {
                     <div className="loginBtnWrapper">
                         <button className="loginBtn">{t("Hero.Modal.login")}</button>
                     </div>
-                    <p>{t("Hero.Modal.altSignInOptions")}</p>
-                    <div className="socialMediaWrapper">
-                        <img src={require("../../../images/heroSectionImages/modalImages/fbIcon.png")} />
-                        <img src={require("../../../images/heroSectionImages/modalImages/twIcon.png")} />
-                        <img src={require("../../../images/heroSectionImages/modalImages/googleIcon.png")} />
-                    </div>
                 </form>
             </div>
         </>

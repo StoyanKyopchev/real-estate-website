@@ -3,13 +3,17 @@
         "h1": "Découvrez votre nouvelle maison",
         "placeholder": "Saisissez une adresse, un quartier, une ville ou un code postal",
         "Modal": {
+            "signUp": "S'inscrire",
             "login": "Connexion",
-            "username": "Nom d'utilisateur",
-            "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+            "email": "E-mail",
+            "emailPlaceholder": "Entrez votre Email",
             "password": "Mot de passe",
+            "passwordConfirmation": "Confirmation mot de passe",
             "passwordPlaceholder": "Tapez votre mot de passe",
+            "passwordConfirmationPlaceholder": "Confirmer votre mot de passe",
             "forgotPassword": "Mot de passe oublié?",
-            "altSignInOptions": "Ou connectez-vous en utilisant:"
+            "alreadyHaveAnAccount": "Déjà enregistré? Se connecter",
+            "signUpError": "Les mots de passe ne correspondent pas"
         },
         "Navigation": {
             "languageBtn": "Langue",

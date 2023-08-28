@@ -6,13 +6,23 @@
     z-index: 2;
 }
 
+.errorAlert {
+    position: relative;
+    width: 100%;
+    background-color: #ff3e3e;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+}
+
 .form {
     max-width: 37.5rem;
     width: 25rem;
-    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    padding: 1rem 2.5rem 0.5rem 2.5rem;
     position: relative;
     left: 40%;
-    top: 30%;
+    top: 25%;
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 0 0 1.125rem 0 #000000bf;
@@ -41,7 +51,8 @@
     position: relative;
 }
 
-.form .fieldWrapper:nth-child(3) {
+.form .fieldWrapper:nth-child(3),
+.form .fieldWrapper:nth-child(4) {
     margin-bottom: 1.4rem;
 }
 
@@ -61,13 +72,14 @@
     color: #333;
     line-height: 1.2;
     padding-left: 3.125rem;
-    background-image: url(../../../images/heroSectionImages//modalImages/usernameIcon.png);
+    background-image: url(../../../images/heroSectionImages//modalImages/emailIcon.png);
     background-repeat: no-repeat;
     background-size: 30px 30px;
     background-position-y: center;
 }
 
-.fieldWrapper:nth-of-type(3) input {
+.fieldWrapper:nth-of-type(3) input,
+.fieldWrapper:nth-of-type(4) input {
     background-image: url(../../../images/heroSectionImages//modalImages/passwordIcon.png);
 }
 
@@ -162,7 +174,6 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .form {
         width: 22rem;
-        padding: 2rem;
         top: 20%;
         left: 35%; 
     }
