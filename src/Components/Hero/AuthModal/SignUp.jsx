@@ -3,7 +3,7 @@ import { TranslatorContext } from "../../../App";
 import { useAuth } from "../../../Contexts/AuthContext";
 import "./modal.css";
 
-export default function Modal({ isOpen, onClose }) {
+export default function SignUp({ isOpen, onClose }) {
     const { t } = useContext(TranslatorContext);
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -17,7 +17,7 @@ export default function Modal({ isOpen, onClose }) {
         e.preventDefault();
 
         if(passwordRef.current.value !== passwordConfRef.current.value) {
-            return setError(t("Hero.Modal.signUpError"));
+            return setError(t("Hero.Modal.signUpPasswordError"));
         }
 
         try {
@@ -25,7 +25,7 @@ export default function Modal({ isOpen, onClose }) {
             setLoading(true);
             await signUp(emailRef.current.value, passwordRef.current.value);
         } catch {
-            setError("Failed to create an account")
+            setError(t("Hero.Modal.signUpAccountError"));
         }
 
         setLoading(false);
@@ -92,9 +92,9 @@ export default function Modal({ isOpen, onClose }) {
                         <span className="inputStyle"></span>
                     </div>
                     <a href="#" className="forgotPassword">{t("Hero.Modal.alreadyHaveAnAccount")}</a>
-                    <div className="loginBtnWrapper">
+                    <div className="submitBtnWrapper">
                         <button 
-                            className="loginBtn"
+                            className="submitBtn"
                             type="submit"
                             disabled={loading}
                         >

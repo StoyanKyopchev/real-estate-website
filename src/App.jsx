@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import Hero from "./Components/Hero/Hero.jsx";
 import Main from "./Components/Main/Main.jsx";

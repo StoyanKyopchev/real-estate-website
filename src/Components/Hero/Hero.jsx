@@ -1,9 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { TranslatorContext } from "../../App";
 import { AuthProvider } from "../../Contexts/AuthContext";
-import Navigation from "./Navigation/Navigation.jsx";
-import Modal from "./Modal/Modal.jsx";
-import SignUp from "./Modal/SignUp";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./Navigation/Navigation";
+import SignIn from "./AuthModal/SignIn";
+import SignUp from "./AuthModal/SignUp";
 import "./hero.css"
 
 export default function Hero() {
@@ -32,14 +33,22 @@ export default function Hero() {
     return (
         <>
             <AuthProvider>
-                <Modal 
-                    isOpen={openModal} 
-                    onClose={() => setOpenModal(false)} 
-                />
-                <SignUp 
-                    isOpen={openModal} 
-                    onClose={() => setOpenModal(false)}
-                />
+                <Routes>
+                    <Route 
+                        path="/signup" 
+                        element={<SignUp 
+                                    isOpen={openModal} 
+                                    onClose={() => setOpenModal(false)} 
+                                />} 
+                    />
+                    <Route 
+                        path="/signin" 
+                        element={<SignIn 
+                                    isOpen={openModal} 
+                                    onClose={() => setOpenModal(false)} 
+                                />} 
+                    />
+                </Routes>
                 <div 
                     className="heroWrapper" 
                     onClick={() => setLanguageMenuOpen(false)}
@@ -73,3 +82,14 @@ export default function Hero() {
         </>
     )
 }
+
+/* Before React Router:
+                    <SignUp 
+                        isOpen={openModal} 
+                        onClose={() => setOpenModal(false)}
+                    />
+                    <SignIn 
+                        isOpen={openModal} 
+                        onClose={() => setOpenModal(false)} 
+                    />
+                    */

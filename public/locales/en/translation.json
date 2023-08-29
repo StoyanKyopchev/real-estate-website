@@ -13,7 +13,9 @@
             "passwordConfirmationPlaceholder": "Confirm your password",
             "forgotPassword": "Forgot password?",
             "alreadyHaveAnAccount": "Already registered? Log in",
-            "signUpError": "Passwords do not match"
+            "signUpPasswordError": "Passwords do not match",
+            "signUpAccountError": "Failed to create an account",
+            "signInError": "Failed to log in"
         },
         "Navigation": {
             "languageBtn": "Language",

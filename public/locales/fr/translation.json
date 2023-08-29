@@ -13,7 +13,9 @@
             "passwordConfirmationPlaceholder": "Confirmer votre mot de passe",
             "forgotPassword": "Mot de passe oublié?",
             "alreadyHaveAnAccount": "Déjà enregistré? Se connecter",
-            "signUpError": "Les mots de passe ne correspondent pas"
+            "signUpPasswordError": "Les mots de passe ne correspondent pas",
+            "signUpAccountError": "Échec de la création d'un compte",
+            "signInError": "Échec de la connexion"
         },
         "Navigation": {
             "languageBtn": "Langue",
