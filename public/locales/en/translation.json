@@ -4,7 +4,9 @@
         "placeholder": "Enter an address, neighborhood, city, or postal code",
         "Modal": {
             "signUp": "Sign Up",
-            "login": "Login",
+            "signIn": "Sign in",
+            "myAccount": "My Account",
+            "logout": "Log out",
             "email": "Email",
             "emailPlaceholder": "Enter your email",
             "password": "Password",
@@ -12,6 +14,8 @@
             "passwordPlaceholder": "Enter your password",
             "passwordConfirmationPlaceholder": "Confirm your password",
             "forgotPassword": "Forgot password?",
+            "noAccount": "Don't have an account?",
+            "updateAccountBtn": "Update account",
             "alreadyHaveAnAccount": "Already registered? Log in",
             "signUpPasswordError": "Passwords do not match",
             "signUpAccountError": "Failed to create an account",
@@ -22,7 +26,7 @@
             "getStartedBtn": "Get Started",
             "aboutBtn": "About",
             "contactUsBtn": "Contact Us",
-            "signInBtn": "Sign in"
+            "signInBtn": "Sign In"
         }
     },
     "Main": {

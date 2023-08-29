@@ -1,6 +1,7 @@
 import { useContext, useState, useRef } from "react";
 import { TranslatorContext } from "../../../App";
 import { useAuth } from "../../../Contexts/AuthContext";
+import { useNavigate, Link } from "react-router-dom";
 import "./modal.css";
 
 export default function SignIn({ isOpen, onClose }) {
@@ -10,6 +11,7 @@ export default function SignIn({ isOpen, onClose }) {
     const { signIn } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
@@ -19,6 +21,7 @@ export default function SignIn({ isOpen, onClose }) {
             setError("");
             setLoading(true);
             await signIn(emailRef.current.value, passwordRef.current.value);
+            navigate("/");
         } catch {
             setError(t("Hero.Modal.signInError"));
         }
@@ -36,7 +39,7 @@ export default function SignIn({ isOpen, onClose }) {
                 }}
             >
                 <form 
-                    className="form" 
+                    className="modalWrapper" 
                     onClick={(e) => {
                         e.stopPropagation();
                     }}
@@ -49,7 +52,7 @@ export default function SignIn({ isOpen, onClose }) {
                     >
                         &times;
                     </div>
-                    <h3>{t("Hero.Modal.login")}</h3>
+                    <h3>{t("Hero.Modal.signIn")}</h3>
                     <div className="fieldWrapper">
                         <label htmlFor="email">{t("Hero.Modal.email")}</label>
                         <input 
@@ -72,14 +75,15 @@ export default function SignIn({ isOpen, onClose }) {
                         />
                         <span className="inputStyle"></span>
                     </div>
-                    <a href="#" className="forgotPassword">{t("Hero.Modal.forgotPassword")}</a>
-                    <div className="submitBtnWrapper">
+                    <Link to="/signup"className="modalAltLink">{t("Hero.Modal.noAccount")}</Link>
+                    <a href="#" className="modalAltLink">{t("Hero.Modal.forgotPassword")}</a>
+                    <div className="modalPrimaryBtnWrapper">
                         <button 
-                            className="submitBtn"
+                            className="modalPrimaryBtn"
                             type="submit"
                             disabled={loading}
                         >
-                            {t("Hero.Modal.login")}
+                            {t("Hero.Modal.signIn")}
                         </button>
                     </div>
                 </form>

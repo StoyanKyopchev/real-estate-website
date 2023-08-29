@@ -3,6 +3,7 @@ import { TranslatorContext } from "../../App";
 import { AuthProvider } from "../../Contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./Navigation/Navigation";
+import AccDashboard from "./AuthModal/AccDashboard";
 import SignIn from "./AuthModal/SignIn";
 import SignUp from "./AuthModal/SignUp";
 import "./hero.css"
@@ -34,6 +35,13 @@ export default function Hero() {
         <>
             <AuthProvider>
                 <Routes>
+                    <Route 
+                        exact path="/"
+                        element={<AccDashboard 
+                                    isOpen={openModal} 
+                                    onClose={() => setOpenModal(false)}
+                                />}
+                    />
                     <Route 
                         path="/signup" 
                         element={<SignUp 
@@ -82,14 +90,3 @@ export default function Hero() {
         </>
     )
 }
-
-/* Before React Router:
-                    <SignUp 
-                        isOpen={openModal} 
-                        onClose={() => setOpenModal(false)}
-                    />
-                    <SignIn 
-                        isOpen={openModal} 
-                        onClose={() => setOpenModal(false)} 
-                    />
-                    */

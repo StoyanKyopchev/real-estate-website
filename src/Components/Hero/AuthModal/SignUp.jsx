@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { TranslatorContext } from "../../../App";
 import { useAuth } from "../../../Contexts/AuthContext";
+import { useNavigate, Link } from "react-router-dom";
 import "./modal.css";
 
 export default function SignUp({ isOpen, onClose }) {
@@ -11,6 +12,7 @@ export default function SignUp({ isOpen, onClose }) {
     const { signUp } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
@@ -24,6 +26,7 @@ export default function SignUp({ isOpen, onClose }) {
             setError("");
             setLoading(true);
             await signUp(emailRef.current.value, passwordRef.current.value);
+            navigate("/");
         } catch {
             setError(t("Hero.Modal.signUpAccountError"));
         }
@@ -41,7 +44,7 @@ export default function SignUp({ isOpen, onClose }) {
                 }}
             >
                 <form 
-                    className="form" 
+                    className="modalWrapper" 
                     onClick={(e) => {
                         e.stopPropagation();
                     }}
@@ -91,10 +94,10 @@ export default function SignUp({ isOpen, onClose }) {
                         />
                         <span className="inputStyle"></span>
                     </div>
-                    <a href="#" className="forgotPassword">{t("Hero.Modal.alreadyHaveAnAccount")}</a>
-                    <div className="submitBtnWrapper">
+                    <Link to="/signin" className="modalAltLink">{t("Hero.Modal.alreadyHaveAnAccount")}</Link>
+                    <div className="modalPrimaryBtnWrapper">
                         <button 
-                            className="submitBtn"
+                            className="modalPrimaryBtn"
                             type="submit"
                             disabled={loading}
                         >
