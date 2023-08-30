@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { TranslatorContext } from "../../../App";
+import { useAuth } from "../../../Contexts/AuthContext";
 import Hamburger from "./hamburger/Hamburger.jsx";
 import LanguageDropdown from "./languageDropdown/LanguageDropdown.jsx";
 import "./navigation.css";
@@ -7,6 +8,7 @@ import "./navigation.css";
 export default function Navigation({ setOpenModal, languageMenuOpen, toggleLanguageDropdown }) {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const { t } = useContext(TranslatorContext);
+    const { currentUser } = useAuth();
 
     function toggleHamburger() {
         setHamburgerOpen(!hamburgerOpen);
@@ -69,7 +71,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             onClick={() => setOpenModal(true)}
                         >
                             <img src={require("../../../images/navImages/signIn.png")} />
-                            {t("Hero.Navigation.signInBtn")}
+                            {currentUser ? t("Hero.Modal.myAccount") : t("Hero.Navigation.signInBtn")}
                         </a>
                     </li>
                 </ul>
