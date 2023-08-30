@@ -19,7 +19,8 @@
             "alreadyHaveAnAccount": "Already registered? Log in",
             "signUpPasswordError": "Passwords do not match",
             "signUpAccountError": "Failed to create an account",
-            "signInError": "Failed to log in"
+            "signInError": "Failed to log in",
+            "signOutError": "Failed to sign out"
         },
         "Navigation": {
             "languageBtn": "Language",

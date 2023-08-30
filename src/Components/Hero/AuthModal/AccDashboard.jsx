@@ -1,17 +1,25 @@
 import { useContext, useState } from "react";
 import { TranslatorContext } from "../../../App";
 import { useAuth } from "../../../Contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./modal.css";
 
 export default function AccDashboard({ isOpen, onClose }) {
     const { t } = useContext(TranslatorContext);
-    const { currentUser } = useAuth();
+    const { currentUser, signOut } = useAuth();
     const [error, setError] = useState("");
+    const navigate = useNavigate();
     if(!isOpen) return null;
 
-    function handleSignOut() {
-
+    async function handleSignOut() {
+        setError("");
+        
+        try {
+            await signOut();
+            navigate("/signin");
+        } catch {
+            setError(t("Hero.Modal.signOutError"));
+        }
     }
 
     return (

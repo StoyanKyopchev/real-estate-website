@@ -19,7 +19,8 @@
             "alreadyHaveAnAccount": "Déjà enregistré? Se connecter",
             "signUpPasswordError": "Les mots de passe ne correspondent pas",
             "signUpAccountError": "Échec de la création d'un compte",
-            "signInError": "Échec de la connexion"
+            "signInError": "Échec de la connexion",
+            "signOutError": "Échec de la déconnexion"
         },
         "Navigation": {
             "languageBtn": "Langue",

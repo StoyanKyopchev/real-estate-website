@@ -6,6 +6,7 @@ import Navigation from "./Navigation/Navigation";
 import AccDashboard from "./AuthModal/AccDashboard";
 import SignIn from "./AuthModal/SignIn";
 import SignUp from "./AuthModal/SignUp";
+import PrivateRoute from "./AuthModal/PrivateRoute";
 import "./hero.css"
 
 export default function Hero() {
@@ -37,10 +38,14 @@ export default function Hero() {
                 <Routes>
                     <Route 
                         exact path="/"
-                        element={<AccDashboard 
-                                    isOpen={openModal} 
-                                    onClose={() => setOpenModal(false)}
-                                />}
+                        element={
+                                <PrivateRoute>
+                                    <AccDashboard 
+                                        isOpen={openModal} 
+                                        onClose={() => setOpenModal(false)}
+                                    />
+                                </PrivateRoute>
+                        }
                     />
                     <Route 
                         path="/signup" 
