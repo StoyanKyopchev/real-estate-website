@@ -14,13 +14,17 @@
             "passwordPlaceholder": "Enter your password",
             "passwordConfirmationPlaceholder": "Confirm your password",
             "forgotPassword": "Forgot password?",
+            "passwordReset": "Password Reset",
+            "resetPassword": "Reset Password",
             "noAccount": "Don't have an account?",
             "updateAccountBtn": "Update account",
-            "alreadyHaveAnAccount": "Already registered? Log in",
+            "alreadyHaveAnAccount": "Already registered? Sign in",
             "signUpPasswordError": "Passwords do not match",
             "signUpAccountError": "Failed to create an account",
             "signInError": "Failed to log in",
-            "signOutError": "Failed to sign out"
+            "signOutError": "Failed to sign out",
+            "resetPasswordError": "Failed to reset password",
+            "resetPasswordSuccess": "Please check your email for further instructions"
         },
         "Navigation": {
             "languageBtn": "Language",

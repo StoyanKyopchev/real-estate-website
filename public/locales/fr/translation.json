@@ -14,13 +14,17 @@
             "passwordPlaceholder": "Tapez votre mot de passe",
             "passwordConfirmationPlaceholder": "Confirmer votre mot de passe",
             "forgotPassword": "Mot de passe oublié?",
+            "passwordReset": "Réinitialisation du mot de passe",
+            "resetPassword": "Réinitialiser le mot de passe",
             "noAccount": "Vous n'avez pas de compte?",
             "updateAccountBtn": "Compte mis à jour",
             "alreadyHaveAnAccount": "Déjà enregistré? Se connecter",
             "signUpPasswordError": "Les mots de passe ne correspondent pas",
             "signUpAccountError": "Échec de la création d'un compte",
             "signInError": "Échec de la connexion",
-            "signOutError": "Échec de la déconnexion"
+            "signOutError": "Échec de la déconnexion",
+            "resetPasswordError": "Échec de la réinitialisation du mot de passe",
+            "resetPasswordSuccess": "Veuillez vérifier votre courrier électronique pour plus d'instructions"
         },
         "Navigation": {
             "languageBtn": "Langue",

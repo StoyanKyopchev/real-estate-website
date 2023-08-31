@@ -7,6 +7,7 @@ import AccDashboard from "./AuthModal/AccDashboard";
 import SignIn from "./AuthModal/SignIn";
 import SignUp from "./AuthModal/SignUp";
 import PrivateRoute from "./AuthModal/PrivateRoute";
+import PasswordReset from "./AuthModal/PasswordReset";
 import "./hero.css"
 
 export default function Hero() {
@@ -18,6 +19,7 @@ export default function Hero() {
         const handleEscape = (e) => {
             if (e.key === "Escape") {
                 setOpenModal(false);
+                setLanguageMenuOpen(false);
             }
         };
 
@@ -60,6 +62,13 @@ export default function Hero() {
                                     isOpen={openModal} 
                                     onClose={() => setOpenModal(false)} 
                                 />} 
+                    />
+                    <Route
+                        path="/passwordreset"
+                        element={<PasswordReset
+                                    isOpen={openModal} 
+                                    onClose={() => setOpenModal(false)}  
+                                />}
                     />
                 </Routes>
                 <div 

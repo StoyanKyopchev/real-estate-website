@@ -1,29 +1,29 @@
 import { useContext, useState, useRef } from "react";
 import { TranslatorContext } from "../../../App";
 import { useAuth } from "../../../Contexts/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./modal.css";
 
-export default function SignIn({ isOpen, onClose }) {
+export default function PasswordReset({ isOpen, onClose }) {
     const { t } = useContext(TranslatorContext);
     const emailRef = useRef();
-    const passwordRef = useRef();
-    const { signIn } = useAuth();
+    const { passwordReset } = useAuth();
     const [error, setError] = useState("");
+    const [successMessage, setSuccessMessage] = useState();
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
+            setSuccessMessage("");
             setError("");
             setLoading(true);
-            await signIn(emailRef.current.value, passwordRef.current.value);
-            navigate("/");
+            await passwordReset(emailRef.current.value);
+            setSuccessMessage(t("Hero.Modal.resetPasswordSuccess"));
         } catch {
-            setError(t("Hero.Modal.signInError"));
+            setError(t("Hero.Modal.resetPasswordError"));
         }
 
         setLoading(false);
@@ -36,6 +36,7 @@ export default function SignIn({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    setSuccessMessage("");
                 }}
             >
                 <form 
@@ -46,13 +47,14 @@ export default function SignIn({ isOpen, onClose }) {
                     onSubmit={handleSubmit}
                 >
                     {error && <div className="errorAlert">{error}</div>}
+                    {successMessage && <div className="successAlert">{successMessage}</div>}
                     <div 
                         className="closeBtn"
                         onClick={onClose}
                     >
                         &times;
                     </div>
-                    <h3>{t("Hero.Modal.signIn")}</h3>
+                    <h3>{t("Hero.Modal.passwordReset")}</h3>
                     <div className="fieldWrapper">
                         <label htmlFor="email">{t("Hero.Modal.email")}</label>
                         <input 
@@ -64,26 +66,15 @@ export default function SignIn({ isOpen, onClose }) {
                         />
                         <span className="inputStyle"></span>
                     </div>
-                    <div className="fieldWrapper">
-                        <label htmlFor="password">{t("Hero.Modal.password")}</label>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder={t("Hero.Modal.passwordPlaceholder")}
-                            ref={passwordRef}
-                            required
-                        />
-                        <span className="inputStyle"></span>
-                    </div>
+                    <Link to="/signin" className="modalAltLink">{t("Hero.Modal.alreadyHaveAnAccount")}</Link>
                     <Link to="/signup"className="modalAltLink">{t("Hero.Modal.noAccount")}</Link>
-                    <Link to="/passwordreset" className="modalAltLink">{t("Hero.Modal.forgotPassword")}</Link>
                     <div className="modalPrimaryBtnWrapper">
                         <button 
                             className="modalPrimaryBtn"
                             type="submit"
                             disabled={loading}
                         >
-                            {t("Hero.Modal.signIn")}
+                            {t("Hero.Modal.resetPassword")}
                         </button>
                     </div>
                 </form>
