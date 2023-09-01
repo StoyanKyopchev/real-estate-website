@@ -8,6 +8,7 @@ import SignIn from "./AuthModal/SignIn";
 import SignUp from "./AuthModal/SignUp";
 import PrivateRoute from "./AuthModal/PrivateRoute";
 import PasswordReset from "./AuthModal/PasswordReset";
+import AccUpdate from "./AuthModal/AccUpdate";
 import "./hero.css"
 
 export default function Hero() {
@@ -69,6 +70,17 @@ export default function Hero() {
                                     isOpen={openModal} 
                                     onClose={() => setOpenModal(false)}  
                                 />}
+                    />
+                    <Route 
+                        path="/accountupdate"
+                        element={
+                                <PrivateRoute>
+                                    <AccUpdate
+                                        isOpen={openModal}
+                                        onClose={() => setOpenModal(false)}
+                                    />
+                                </PrivateRoute>
+                        }
                     />
                 </Routes>
                 <div 

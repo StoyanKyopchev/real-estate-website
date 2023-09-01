@@ -50,7 +50,12 @@ export default function AccDashboard({ isOpen, onClose }) {
                         <span className="myAccountCurrentEmail">{currentUser.email}</span>  
                     </div>
                     <div className="modalPrimaryBtnWrapper">
-                        <button className="modalPrimaryBtn">{t("Hero.Modal.updateAccountBtn")}</button>
+                        <Link 
+                            to ="/accountupdate" 
+                            className="modalPrimaryBtn modalLink"
+                        >
+                            {t("Hero.Modal.updateAccount")}
+                        </Link>
                     </div>
                     <div className="modalPrimaryBtnWrapper">
                         <button 

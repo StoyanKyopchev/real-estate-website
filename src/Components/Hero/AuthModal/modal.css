@@ -63,7 +63,8 @@
 
 .modalWrapper .fieldWrapper:nth-child(3),
 .modalWrapper .fieldWrapper:nth-child(4),
-.modalWrapper .fieldWrapper:nth-child(5) {
+.modalWrapper .fieldWrapper:nth-child(5),
+.modalWrapper .fieldWrapper:nth-child(6) {
     margin-bottom: 1.4rem;
 }
 
@@ -192,6 +193,11 @@
 
 .socialMediaWrapper img {
     cursor: pointer;
+}
+
+.modalLink {
+    display: block;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 574px) {
