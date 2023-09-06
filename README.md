@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+![Alt text](./src/images/RE%20website%20showcase%20img.JPG)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HomesA-Z
 
-## Available Scripts
+HomesA-Z is a responsive and user-friendly real estate website designed and built by me. The project is meant to showcase my current progress in front-end web development with the React framework.
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+* `React`
+* `Firebase`
+* `CSS 3`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This section will guide you how to get a local copy of the project up and running.
 
-### `npm test`
+### Prerequisites
+* npm
+  ```sh
+  npm install -g npm@latest
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Install the necessary NPM packages
+   ```sh
+   npm install
+   ```
+3. Create a free Firebase project by following the steps below  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Visit the [Firebase console](https://console.firebase.google.com) and log in with your Google account.
+   - Click on "Add project" and follow the simple 2 step process there.
+   - Once that is done, click on your project and on the menu to the left, head to the Authentication section. There, click on the Email/Password field and make sure that it is enabled.
+   - On the menu to the left click on Project Overview at the top. Click the icon for web app </>. Give it a name and after that you will be able to see the necessary configuration settings on your screen.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Create a file called .env.local in the main repo folder and enter your Firebase API settings there
+   ```js
+   REACT_APP_FIREBASE_API_KEY=Your API key generated from Firebase
+   REACT_APP_FIREBASE_AUTH_DOMAIN=...
+   REACT_APP_FIREBASE_PROJECT_ID=...
+   REACT_APP_FIREBASE_STORAGE_BUCKET=...
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=...
+   REACT_APP_FIREBASE_APP_ID=...
+   ```
+5. Run the project
+   ```sh
+   npm start
+   ```

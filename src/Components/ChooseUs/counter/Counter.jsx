@@ -25,7 +25,8 @@ export default function Counter() {
                     <span className="count">
                         <CountUp 
                             start={1300} 
-                            end={1400} duration={4} 
+                            end={1400} 
+                            duration={4} 
                             enableScrollSpy 
                         />
                         <span> +</span>
