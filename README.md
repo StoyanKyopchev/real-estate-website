@@ -24,7 +24,7 @@ This section will guide you how to get a local copy of the project up and runnin
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/StoyanKyopchev/real-estate-website.git
    ```
 2. Install the necessary NPM packages
    ```sh
