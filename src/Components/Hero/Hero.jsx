@@ -3,7 +3,7 @@ import { TranslatorContext } from "../../App";
 import Navigation from "./Navigation/Navigation";
 import "./hero.css"
 
-export default function Hero({ openModal, setOpenModal }) {
+export default function Hero({ setOpenModal }) {
     const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
     const { t } = useContext(TranslatorContext);
 
