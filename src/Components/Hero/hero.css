@@ -1,5 +1,4 @@
 .heroWrapper {
-    padding-top: 1.75rem;
     height: 100vh;
     background-image: url("../../images/heroSectionImages/heroImage.jpg");
     background-repeat: no-repeat;
@@ -72,7 +71,7 @@
     width: 100%;
     height: 40%;
     position: relative;
-    top: 11.5%;
+    top: 22.5%;
 }
 
 @media only screen and (max-width: 574px) {
@@ -109,7 +108,7 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .innerHeroWrapper {
         height: 37%;
-        top: 16%;
+        top: 24%;
     }
 
     .headingWrapper {

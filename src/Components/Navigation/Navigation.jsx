@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { TranslatorContext } from "../../../App";
-import { useAuth } from "../../../Contexts/AuthContext";
+import { TranslatorContext } from "../../App";
+import { useAuth } from "../../Contexts/AuthContext";
 import Hamburger from "./hamburger/Hamburger.jsx";
 import LanguageDropdown from "./languageDropdown/LanguageDropdown.jsx";
 import "./navigation.css";
@@ -30,7 +30,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                 </div>
 
                 <a href="/" id="logoIcon">
-                    <img src={require("../../../images/navImages/logoIcon.png")} alt="logo" />
+                    <img src={require("../../images/navImages/logoIcon.png")} alt="logo" />
                     HomesA-Z
                 </a>
                 <ul className="navInnerWrapper">
@@ -39,7 +39,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             className="languageMenuButton"
                             onClick={toggleLanguageDropdown}
                         >
-                            <img src={require("../../../images/navImages/language.png")} />
+                            <img src={require("../../images/navImages/language.png")} />
                             {t("Hero.Navigation.languageBtn")}
                         </button>
                         <LanguageDropdown 
@@ -49,19 +49,19 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                     </li>
                     <li>
                         <a href="#getStarted">
-                            <img src={require("../../../images/navImages/getStarted.png")} />
+                            <img src={require("../../images/navImages/getStarted.png")} />
                             {t("Hero.Navigation.getStartedBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
-                            <img src={require("../../../images/navImages/about.png")} />
+                            <img src={require("../../images/navImages/about.png")} />
                             {t("Hero.Navigation.aboutBtn")}
                         </a>
                     </li>
                     <li>
                         <a href="#footerScroll">
-                            <img src={require("../../../images/navImages/contactUs.png")} />
+                            <img src={require("../../images/navImages/contactUs.png")} />
                             {t("Hero.Navigation.contactUsBtn")}
                         </a>
                     </li>
@@ -70,7 +70,7 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                             href="#" 
                             onClick={() => setOpenModal(true)}
                         >
-                            <img src={require("../../../images/navImages/signIn.png")} />
+                            <img src={require("../../images/navImages/signIn.png")} />
                             {currentUser ? t("Hero.Modal.myAccount") : t("Hero.Navigation.signInBtn")}
                         </a>
                     </li>

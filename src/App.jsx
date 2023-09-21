@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./Contexts/AuthContext";
 import { useTranslation } from "react-i18next";
+import Navigation from "./Components/Navigation/Navigation"
 import Hero from "./Components/Hero/Hero.jsx";
 import Main from "./Components/Main/Main.jsx";
 import ChooseUs from "./Components/ChooseUs/ChooseUs.jsx";
@@ -20,7 +21,12 @@ export const TranslatorContext = React.createContext();
 
 export default function App() {
   const [openModal, setOpenModal] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+
+  function toggleLanguageDropdown() {
+    setLanguageMenuOpen(!languageMenuOpen);
+  }
 
   return (
     <>
@@ -71,7 +77,16 @@ export default function App() {
                   }
               />
           </Routes>
-          <Hero openModal={openModal} setOpenModal={setOpenModal} />
+          <Navigation 
+            setOpenModal={setOpenModal} 
+            toggleLanguageDropdown={toggleLanguageDropdown}
+            languageMenuOpen={languageMenuOpen}
+            />
+          <Hero 
+            openModal={openModal} 
+            setOpenModal={setOpenModal}
+            setLanguageMenuOpen={setLanguageMenuOpen} 
+          />
           <Main />
           <ChooseUs />
           <Footer />

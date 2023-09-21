@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { TranslatorContext } from "../../App";
-import Navigation from "./Navigation/Navigation";
 import "./hero.css"
 
-export default function Hero({ setOpenModal }) {
-    const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+export default function Hero({ setOpenModal, setLanguageMenuOpen }) {
     const { t } = useContext(TranslatorContext);
 
     useEffect(() => {
@@ -22,21 +20,12 @@ export default function Hero({ setOpenModal }) {
         };
     }, []);
 
-    function toggleLanguageDropdown() {
-        setLanguageMenuOpen(!languageMenuOpen);
-    }
-
     return (
         <>
             <div 
                 className="heroWrapper" 
                 onClick={() => setLanguageMenuOpen(false)}
             >
-                <Navigation 
-                    setOpenModal={setOpenModal} 
-                    toggleLanguageDropdown={toggleLanguageDropdown}
-                    languageMenuOpen={languageMenuOpen}
-                />
                 <div className="innerHeroWrapper">
                     <div className="headingWrapper">
                         <h1>{t("Hero.h1")}</h1>

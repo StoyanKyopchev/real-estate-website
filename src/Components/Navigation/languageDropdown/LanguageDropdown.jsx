@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TranslatorContext } from "../../../../App";
+import { TranslatorContext } from "../../../App";
 import "./languageDropdown.css";
 
 const locales = {
