@@ -24,7 +24,7 @@ function NextArrow(props) {
     );
   }
   
-export default function Carousel() {
+export default function Carousel({ setSelectedProperty }) {
     const settings = {
         dots: true,
         infinite: false,
@@ -56,7 +56,11 @@ export default function Carousel() {
             <Slider {...settings}>
                 {popularListings.map((home) => {
                     return (
-                        <Listing home={home} key={home.id} />
+                        <Listing 
+                          home={home} 
+                          key={home.id} 
+                          setSelectedProperty={setSelectedProperty}
+                        />
                     );
                 })}
             </Slider>

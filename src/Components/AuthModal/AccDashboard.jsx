@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
-import { TranslatorContext } from "../../../App";
-import { useAuth } from "../../../Contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import { TranslatorContext } from "../../App";
+import { useAuth } from "../../Contexts/AuthContext";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./modal.css";
 
 export default function AccDashboard({ isOpen, onClose }) {
@@ -9,6 +9,24 @@ export default function AccDashboard({ isOpen, onClose }) {
     const { currentUser, signOut } = useAuth();
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location.state.previousLocation;
+
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                onClose();
+                navigate(previousLocation);
+            }
+        };
+
+        document.addEventListener("keydown", handleEscape);
+        
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, []);
+    
     if(!isOpen) return null;
 
     async function handleSignOut() {
@@ -16,7 +34,7 @@ export default function AccDashboard({ isOpen, onClose }) {
         
         try {
             await signOut();
-            navigate("/signin");
+            navigate(previousLocation);
         } catch {
             setError(t("Hero.Modal.signOutError"));
         }
@@ -29,6 +47,7 @@ export default function AccDashboard({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    navigate(previousLocation);
                 }}
             >
                 <div 
@@ -40,7 +59,11 @@ export default function AccDashboard({ isOpen, onClose }) {
                     {error && <div className="errorAlert">{error}</div>}
                     <div 
                         className="closeBtn"
-                        onClick={onClose}
+                        onClick={() => {
+                            onClose();
+                            setError("");
+                            navigate(previousLocation);
+                        }}
                     >
                         &times;
                     </div>
@@ -51,7 +74,8 @@ export default function AccDashboard({ isOpen, onClose }) {
                     </div>
                     <div className="modalPrimaryBtnWrapper">
                         <Link 
-                            to ="/accountupdate" 
+                            to ="/account-update"
+                            state={{ previousLocation: previousLocation }} 
                             className="modalPrimaryBtn modalLink"
                         >
                             {t("Hero.Modal.updateAccount")}

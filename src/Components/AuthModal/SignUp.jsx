@@ -1,18 +1,36 @@
-import { useContext, useRef, useState } from "react";
-import { TranslatorContext } from "../../../App";
-import { useAuth } from "../../../Contexts/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
+import { useContext, useRef, useState, useEffect } from "react";
+import { TranslatorContext } from "../../App";
+import { useAuth } from "../../Contexts/AuthContext";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import "./modal.css";
 
-export default function AccUpdate({ isOpen, onClose }) {
+export default function SignUp({ isOpen, onClose }) {
     const { t } = useContext(TranslatorContext);
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfRef = useRef();
-    const { changeEmail, changePassword, currentUser } = useAuth();
-    const navigate = useNavigate();
+    const { signUp } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location.state.previousLocation;
+
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                onClose();
+                navigate(previousLocation);
+            }
+        };
+
+        document.addEventListener("keydown", handleEscape);
+        
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, []);
+
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
@@ -25,18 +43,10 @@ export default function AccUpdate({ isOpen, onClose }) {
         try {
             setError("");
             setLoading(true);
-
-            if (emailRef.current.value !== currentUser.email) {
-                await changeEmail(emailRef.current.value);
-                navigate("/");
-            }
-            if (passwordRef.current.value) {
-                await changePassword(passwordRef.current.value);
-                navigate("/");
-            }
-
+            await signUp(emailRef.current.value, passwordRef.current.value);
+            navigate(previousLocation);
         } catch {
-            setError(t("Hero.Modal.updateAccountError"));
+            setError(t("Hero.Modal.signUpAccountError"));
         }
 
         setLoading(false);
@@ -49,6 +59,7 @@ export default function AccUpdate({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    navigate(previousLocation);
                 }}
             >
                 <form 
@@ -64,18 +75,20 @@ export default function AccUpdate({ isOpen, onClose }) {
                         onClick={() => {
                             onClose();
                             setError("");
+                            navigate(previousLocation);
                         }}
                     >
                         &times;
                     </div>
-                    <h3>{t("Hero.Modal.updateAccount")}</h3>
+                    <h3>{t("Hero.Modal.signUp")}</h3>
                     <div className="fieldWrapper">
                         <label htmlFor="email">{t("Hero.Modal.email")}</label>
                         <input 
                             type="email" 
                             name="email"
                             ref={emailRef}
-                            defaultValue={currentUser.email}
+                            placeholder={t("Hero.Modal.emailPlaceholder")}
+                            required
                         />
                         <span className="inputStyle"></span>
                     </div>
@@ -85,7 +98,8 @@ export default function AccUpdate({ isOpen, onClose }) {
                             type="password" 
                             name="password"
                             ref={passwordRef}
-                            placeholder={t("Hero.Modal.updatePasswordPlaceholder")}
+                            placeholder={t("Hero.Modal.passwordPlaceholder")}
+                            required
                         />
                         <span className="inputStyle"></span>
                     </div>
@@ -95,26 +109,26 @@ export default function AccUpdate({ isOpen, onClose }) {
                             type="password" 
                             name="password"
                             ref={passwordConfRef} 
-                            placeholder={t("Hero.Modal.updatePasswordPlaceholder")}
+                            placeholder={t("Hero.Modal.passwordConfirmationPlaceholder")}
+                            required
                         />
                         <span className="inputStyle"></span>
                     </div>
+                    <Link 
+                        to="/sign-in"
+                        state={{ previousLocation: previousLocation }}
+                        className="modalAltLink"
+                    >
+                        {t("Hero.Modal.alreadyHaveAnAccount")}
+                    </Link>
                     <div className="modalPrimaryBtnWrapper">
                         <button 
                             className="modalPrimaryBtn"
                             type="submit"
                             disabled={loading}
                         >
-                            {t("Hero.Modal.updateAccount")}
+                            {t("Hero.Modal.signUp")}
                         </button>
-                    </div>
-                    <div className="modalPrimaryBtnWrapper">
-                        <Link 
-                            to ="/" 
-                            className="modalPrimaryBtn modalLink"
-                        >
-                            {t("Hero.Modal.cancel")}
-                        </Link>
                     </div>
                 </form>
             </div>

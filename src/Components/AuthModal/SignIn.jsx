@@ -1,34 +1,47 @@
-import { useContext, useRef, useState } from "react";
-import { TranslatorContext } from "../../../App";
-import { useAuth } from "../../../Contexts/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
+import { useContext, useState, useRef, useEffect } from "react";
+import { TranslatorContext } from "../../App";
+import { useAuth } from "../../Contexts/AuthContext";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import "./modal.css";
 
-export default function SignUp({ isOpen, onClose }) {
+export default function SignIn({ isOpen, onClose }) {
     const { t } = useContext(TranslatorContext);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const passwordConfRef = useRef();
-    const { signUp } = useAuth();
+    const { signIn } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location.state.previousLocation;
+
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                onClose();
+                navigate(previousLocation);
+            }
+        };
+
+        document.addEventListener("keydown", handleEscape);
+        
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, []);
+    
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
         e.preventDefault();
 
-        if(passwordRef.current.value !== passwordConfRef.current.value) {
-            return setError(t("Hero.Modal.signUpPasswordError"));
-        }
-
         try {
             setError("");
             setLoading(true);
-            await signUp(emailRef.current.value, passwordRef.current.value);
-            navigate("/");
+            await signIn(emailRef.current.value, passwordRef.current.value);
+            navigate(previousLocation);
         } catch {
-            setError(t("Hero.Modal.signUpAccountError"));
+            setError(t("Hero.Modal.signInError"));
         }
 
         setLoading(false);
@@ -41,6 +54,7 @@ export default function SignUp({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    navigate(previousLocation);
                 }}
             >
                 <form 
@@ -56,18 +70,19 @@ export default function SignUp({ isOpen, onClose }) {
                         onClick={() => {
                             onClose();
                             setError("");
+                            navigate(previousLocation);
                         }}
                     >
                         &times;
                     </div>
-                    <h3>{t("Hero.Modal.signUp")}</h3>
+                    <h3>{t("Hero.Modal.signIn")}</h3>
                     <div className="fieldWrapper">
                         <label htmlFor="email">{t("Hero.Modal.email")}</label>
                         <input 
                             type="email" 
-                            name="email"
-                            ref={emailRef}
+                            name="email" 
                             placeholder={t("Hero.Modal.emailPlaceholder")}
+                            ref={emailRef}
                             required
                         />
                         <span className="inputStyle"></span>
@@ -76,32 +91,34 @@ export default function SignUp({ isOpen, onClose }) {
                         <label htmlFor="password">{t("Hero.Modal.password")}</label>
                         <input 
                             type="password" 
-                            name="password"
-                            ref={passwordRef}
+                            name="password" 
                             placeholder={t("Hero.Modal.passwordPlaceholder")}
+                            ref={passwordRef}
                             required
                         />
                         <span className="inputStyle"></span>
                     </div>
-                    <div className="fieldWrapper">
-                        <label htmlFor="password">{t("Hero.Modal.passwordConfirmation")}</label>
-                        <input 
-                            type="password" 
-                            name="password"
-                            ref={passwordConfRef} 
-                            placeholder={t("Hero.Modal.passwordConfirmationPlaceholder")}
-                            required
-                        />
-                        <span className="inputStyle"></span>
-                    </div>
-                    <Link to="/signin" className="modalAltLink">{t("Hero.Modal.alreadyHaveAnAccount")}</Link>
+                    <Link 
+                        to="/sign-up"
+                        state={{ previousLocation: previousLocation }}
+                        className="modalAltLink"
+                    >
+                        {t("Hero.Modal.noAccount")}
+                    </Link>
+                    <Link 
+                        to="/password-reset"
+                        state={{ previousLocation: previousLocation }}
+                        className="modalAltLink"
+                    >
+                        {t("Hero.Modal.forgotPassword")}
+                    </Link>
                     <div className="modalPrimaryBtnWrapper">
                         <button 
                             className="modalPrimaryBtn"
                             type="submit"
                             disabled={loading}
                         >
-                            {t("Hero.Modal.signUp")}
+                            {t("Hero.Modal.signIn")}
                         </button>
                     </div>
                 </form>

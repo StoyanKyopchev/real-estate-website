@@ -1,0 +1,22 @@
+.selectedPropertyWrapper {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    text-align: center;
+}
+
+.selectedPropertyWrapper img {
+    width: 40%;
+    height: 50%;
+    margin-top: 7rem;
+}
+
+.selectedPropertyBottomHalf h3 {
+    font-size: 2rem;
+}
+
+.selectedPropertyPrice {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}

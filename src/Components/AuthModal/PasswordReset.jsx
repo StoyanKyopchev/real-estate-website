@@ -1,7 +1,7 @@
-import { useContext, useState, useRef } from "react";
-import { TranslatorContext } from "../../../App";
-import { useAuth } from "../../../Contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { useContext, useState, useRef, useEffect } from "react";
+import { TranslatorContext } from "../../App";
+import { useAuth } from "../../Contexts/AuthContext";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./modal.css";
 
 export default function PasswordReset({ isOpen, onClose }) {
@@ -11,6 +11,25 @@ export default function PasswordReset({ isOpen, onClose }) {
     const [error, setError] = useState("");
     const [successMessage, setSuccessMessage] = useState();
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const previousLocation = location.state.previousLocation;
+
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                onClose();
+                navigate(previousLocation);
+            }
+        };
+
+        document.addEventListener("keydown", handleEscape);
+        
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, []);
+    
     if(!isOpen) return null;
 
     async function handleSubmit(e) {
@@ -37,6 +56,7 @@ export default function PasswordReset({ isOpen, onClose }) {
                     onClose();
                     setError("");
                     setSuccessMessage("");
+                    navigate(previousLocation);
                 }}
             >
                 <form 
@@ -50,7 +70,11 @@ export default function PasswordReset({ isOpen, onClose }) {
                     {successMessage && <div className="successAlert">{successMessage}</div>}
                     <div 
                         className="closeBtn"
-                        onClick={onClose}
+                        onClick={() => {
+                            onClose();
+                            setError("");
+                            navigate(previousLocation);
+                        }}
                     >
                         &times;
                     </div>
@@ -66,8 +90,20 @@ export default function PasswordReset({ isOpen, onClose }) {
                         />
                         <span className="inputStyle"></span>
                     </div>
-                    <Link to="/signin" className="modalAltLink">{t("Hero.Modal.alreadyHaveAnAccount")}</Link>
-                    <Link to="/signup"className="modalAltLink">{t("Hero.Modal.noAccount")}</Link>
+                    <Link 
+                        to="/sign-in"
+                        state={{ previousLocation: previousLocation }}
+                        className="modalAltLink"
+                    >
+                        {t("Hero.Modal.alreadyHaveAnAccount")}
+                    </Link>
+                    <Link 
+                        to="/sign-up"
+                        state={{ previousLocation: previousLocation }}
+                        className="modalAltLink"
+                    >
+                        {t("Hero.Modal.noAccount")}
+                    </Link>
                     <div className="modalPrimaryBtnWrapper">
                         <button 
                             className="modalPrimaryBtn"
