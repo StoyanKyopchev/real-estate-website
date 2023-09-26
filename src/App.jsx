@@ -12,6 +12,7 @@ import PasswordReset from "./Components/AuthModal/PasswordReset.jsx";
 import AccUpdate from "./Components/AuthModal/AccUpdate.jsx";
 import SelectedProperty from "./Components/SelectedProperty/SelectedProperty";
 import Home from "./Components/Home";
+import ScrollToHashElement from "./Components/ScrollToHashElement";
 import "./CSS/global.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -116,6 +117,7 @@ export default function App() {
             />
           </Routes>
           <Footer />
+          <ScrollToHashElement />
         </TranslatorContext.Provider>
       </AuthProvider>
     </>

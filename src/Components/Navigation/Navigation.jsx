@@ -50,10 +50,10 @@ export default function Navigation({ setOpenModal, languageMenuOpen, toggleLangu
                         />
                     </li>
                     <li>
-                        <a href="#getStarted">
+                        <Link to="/#getStarted">
                             <img src={require("../../images/navImages/getStarted.png")} />
                             {t("Hero.Navigation.getStartedBtn")}
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="#footerScroll">
