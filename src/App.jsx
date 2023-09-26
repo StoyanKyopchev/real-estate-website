@@ -104,14 +104,24 @@ export default function App() {
                   setSelectedProperty={setSelectedProperty}
                 />
               }
-            >
-            </Route>
+            />
             <Route 
               path="/selected-property"
               element={
                 <SelectedProperty 
                   selectedProperty={selectedProperty} 
                   setSelectedProperty={setSelectedProperty} 
+                />
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <Home 
+                  openModal={openModal}
+                  setOpenModal={setOpenModal}
+                  setLanguageMenuOpen={setLanguageMenuOpen}
+                  setSelectedProperty={setSelectedProperty}
                 />
               }
             />
