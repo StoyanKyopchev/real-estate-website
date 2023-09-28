@@ -63,6 +63,9 @@
             "happyCustomers": "Happy customers"
         }
     },
+    "SelectedProperty": {
+        "selectedPropertyDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ullam tempora quod? Quis quisquam enim, temporibus a expedita molestiae vitae vel labore, eligendi eveniet commodi sed soluta velit, dolor impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cum obcaecati doloremque sapiente veritatis vero architecto similique enim rem, sunt perferendis iure accusamus dolores voluptate impedit ipsum! Reprehenderit, et aspernatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos nisi expedita eum magni esse, praesentium accusamus quam magnam sequi reprehenderit consectetur adipisci enim impedit rem odio eveniet porro veniam. Laboriosam?"
+    },
     "Footer": {
         "column1": {
             "company": "Company",

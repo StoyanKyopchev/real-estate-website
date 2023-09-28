@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { TranslatorContext } from "../../../App";
+import { Link } from "react-router-dom";
 import LanguageDropdown from "../languageDropdown/LanguageDropdown.jsx"
 import "./hamburger.css";
 
@@ -20,10 +21,10 @@ export default function Hamburger({ isToggled, languageMenuOpen, toggleLanguageD
             <div className={`hamburgerMenu ${isToggled ? "hamburgerMenuActive" : ""}`}>
                 <ul>
                     <li>
-                        <a href="#getStarted">
+                        <Link to="/#getStarted">
                             <img src={require("../../../images/navImages/getStarted.png")} />
                             {t("Hero.Navigation.getStartedBtn")}
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="#footerScroll">

@@ -14,10 +14,14 @@ export default function SelectedProperty({ selectedProperty, setSelectedProperty
                 return (
                     <div className="selectedPropertyWrapper" key={home.id}>
                         <img src={ home.imgPath } />
-                        <div className="selectedPropertyBottomHalf">
-                            <h3>{ home.city }</h3>
-                            <p className="selectedPropertyPrice">{ home.price }</p>
-                            <p>{t("Main.Listing.listingDescription")}</p>
+                        <div className="selectedPropertyRightHalf">
+                            <div className="selectedPropertyRightHalfTopSide">
+                                <h3>{ home.city }</h3>
+                                <p className="selectedPropertyPrice">{ home.price }</p>
+                            </div>
+                            <p className="selectedPropertyDescription">{t("Main.Listing.listingDescription")}</p>
+                            <br />
+                            <p className="selectedPropertyDescription">{t("SelectedProperty.selectedPropertyDescription")}</p>
                         </div>
                     </div>
                 );

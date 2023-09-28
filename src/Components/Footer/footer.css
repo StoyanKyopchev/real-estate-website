@@ -95,8 +95,16 @@ ul {
 }
 
 @media only screen and (max-width: 574px){
+    .footer {
+        padding: 1.25rem 2.5rem;
+    }
+
     .column{
       width: 100%;
+    }
+
+    .column h3 {
+        margin: 1.25rem 0;
     }
   }
 
