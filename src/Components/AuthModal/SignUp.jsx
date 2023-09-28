@@ -11,6 +11,7 @@ export default function SignUp({ isOpen, onClose }) {
     const passwordConfRef = useRef();
     const { signUp } = useAuth();
     const [error, setError] = useState("");
+    const [successMessage, setSuccessMessage] = useState();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,10 +42,12 @@ export default function SignUp({ isOpen, onClose }) {
         }
 
         try {
+            setSuccessMessage("");
             setError("");
             setLoading(true);
             await signUp(emailRef.current.value, passwordRef.current.value);
-            navigate(previousLocation);
+            setSuccessMessage(t("Hero.Modal.signUpSuccess"));
+            setTimeout(() => {navigate(previousLocation)}, 2500);
         } catch {
             setError(t("Hero.Modal.signUpAccountError"));
         }
@@ -59,6 +62,7 @@ export default function SignUp({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    setSuccessMessage("");
                     navigate(previousLocation);
                 }}
             >
@@ -70,11 +74,13 @@ export default function SignUp({ isOpen, onClose }) {
                     onSubmit={handleSubmit}
                 >
                     {error && <div className="errorAlert">{error}</div>}
+                    {successMessage && <div className="successAlert">{successMessage}</div>}
                     <div 
                         className="closeBtn"
                         onClick={() => {
                             onClose();
                             setError("");
+                            setSuccessMessage("");
                             navigate(previousLocation);
                         }}
                     >

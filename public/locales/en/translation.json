@@ -6,7 +6,7 @@
             "signUp": "Sign Up",
             "signIn": "Sign In",
             "myAccount": "My Account",
-            "logout": "Log out",
+            "signOut": "Sign out",
             "cancel": "Cancel",
             "email": "Email",
             "emailPlaceholder": "Enter your email",
@@ -23,11 +23,15 @@
             "alreadyHaveAnAccount": "Already registered? Sign in",
             "signUpPasswordError": "Passwords do not match",
             "signUpAccountError": "Failed to create an account",
-            "signInError": "Failed to log in",
+            "signUpSuccess": "Account created successfully",
+            "signInError": "Failed to sign in",
+            "signInSuccess": "Sign in successful",
             "signOutError": "Failed to sign out",
+            "signOutSuccess": "Sign out successful",
             "resetPasswordError": "Failed to reset password",
             "resetPasswordSuccess": "Please check your email for further instructions",
-            "updateAccountError": "Failed to update account details"
+            "updateAccountError": "Failed to update account details",
+            "updateAccountSuccess": "Account updated successfully"
         },
         "Navigation": {
             "languageBtn": "Language",

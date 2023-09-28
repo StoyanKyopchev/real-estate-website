@@ -6,7 +6,7 @@
             "signUp": "S'inscrire",
             "signIn": "Se Connecter",
             "myAccount": "Mon compte",
-            "logout": "Se déconnecter",
+            "signOut": "Se déconnecter",
             "cancel": "Annuler",
             "email": "E-mail",
             "emailPlaceholder": "Entrez votre Email",
@@ -23,11 +23,15 @@
             "alreadyHaveAnAccount": "Déjà enregistré? Se connecter",
             "signUpPasswordError": "Les mots de passe ne correspondent pas",
             "signUpAccountError": "Échec de la création d'un compte",
+            "signUpSuccess": "Compte créé avec succès",
             "signInError": "Échec de la connexion",
+            "signInSuccess": "Connexion réussie",
             "signOutError": "Échec de la déconnexion",
+            "signOutSuccess": "Déconnexion réussie",
             "resetPasswordError": "Échec de la réinitialisation du mot de passe",
             "resetPasswordSuccess": "Veuillez vérifier votre courrier électronique pour plus d'instructions",
-            "updateAccountError": "Échec de la mise à jour des détails du compte"
+            "updateAccountError": "Échec de la mise à jour des détails du compte",
+            "updateAccountSuccess": "Compte mis à jour avec succès"
         },
         "Navigation": {
             "languageBtn": "Langue",

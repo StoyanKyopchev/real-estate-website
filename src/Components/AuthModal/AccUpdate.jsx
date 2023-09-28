@@ -12,6 +12,7 @@ export default function AccUpdate({ isOpen, onClose }) {
     const { changeEmail, changePassword, currentUser } = useAuth();
     const navigate = useNavigate();
     const [error, setError] = useState("");
+    const [successMessage, setSuccessMessage] = useState();
     const [loading, setLoading] = useState(false);
     const location = useLocation();
     const previousLocation = location.state.previousLocation;
@@ -42,15 +43,18 @@ export default function AccUpdate({ isOpen, onClose }) {
 
         try {
             setError("");
+            setSuccessMessage("");
             setLoading(true);
 
             if (emailRef.current.value !== currentUser.email) {
                 await changeEmail(emailRef.current.value);
-                navigate(previousLocation);
+                setSuccessMessage(t("Hero.Modal.updateAccountSuccess"));
+                setTimeout(() => {navigate(previousLocation)}, 2500);
             }
             if (passwordRef.current.value) {
                 await changePassword(passwordRef.current.value);
-                navigate(previousLocation);
+                setSuccessMessage(t("Hero.Modal.updateAccountSuccess"));
+                setTimeout(() => {navigate(previousLocation)}, 2500);
             }
 
         } catch {
@@ -67,6 +71,7 @@ export default function AccUpdate({ isOpen, onClose }) {
                 onClick={() => {
                     onClose();
                     setError("");
+                    setSuccessMessage("");
                     navigate(previousLocation);
                 }}
             >
@@ -78,11 +83,13 @@ export default function AccUpdate({ isOpen, onClose }) {
                     onSubmit={handleSubmit}
                 >
                     {error && <div className="errorAlert">{error}</div>}
+                    {successMessage && <div className="successAlert">{successMessage}</div>}
                     <div 
                         className="closeBtn"
                         onClick={() => {
                             onClose();
                             setError("");
+                            setSuccessMessage("");
                             navigate(previousLocation);
                         }}
                     >

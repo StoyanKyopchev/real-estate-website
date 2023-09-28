@@ -73,6 +73,7 @@ export default function PasswordReset({ isOpen, onClose }) {
                         onClick={() => {
                             onClose();
                             setError("");
+                            setSuccessMessage("");
                             navigate(previousLocation);
                         }}
                     >
