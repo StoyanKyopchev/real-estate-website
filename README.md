@@ -1,4 +1,4 @@
-![Alt text](./src/images/RE%20website%20showcase%20img.JPG)
+https://github.com/StoyanKyopchev/real-estate-website/assets/115925638/3820b96d-2c44-4500-b1c1-305032712e33
 
 # HomesA-Z
 
